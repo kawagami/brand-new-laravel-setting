@@ -8,6 +8,9 @@ echo '#!/bin/bash
 cd ./laradock
 docker-compose exec --user=laradock workspace $@' >> ./cmd.sh
 
+# 刪除從 github 下載的 .git
+rm -rf ./.git
+
 # 修改 laradock .env
 
 # 下載 laradock
