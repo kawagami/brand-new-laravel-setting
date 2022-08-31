@@ -48,6 +48,13 @@ docker-compose exec --user=laradock workspace composer create-project laravel/la
 # 安裝完後 down service
 docker-compose down
 
+# 修改 laravel .env 的 DB_HOST
+sed -e "s/DB_HOST=.*/DB_HOST=mysql/" -i ../laravel/.env
+sed -e "s/DB_PASSWORD=.*/DB_PASSWORD=root/" -i ../laravel/.env
+
+# 修改 laradock mysql 資料庫的設定
+sed -e "s/MYSQL_DATABASE=.*/MYSQL_DATABASE=laravel/" -i ./.env
+
 # 修改根路徑
 AFTER_LARAVEL_INSTALL="APP_CODE_PATH_HOST=\.\.\/$APP_NAME"
 sed -e "s/APP_CODE_PATH_HOST=\.\./$AFTER_LARAVEL_INSTALL/" -i ./.env
