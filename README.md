@@ -15,6 +15,11 @@ sh init.sh
 * 執行完成後即會在專案資料夾內產生如下圖的專案
     * ![](https://i.imgur.com/ApZ7gxs.png)
 * 會自動開啟在 laravel 目錄下的 VScode IDE
+* 此時即可在 http://localhost/ 進入 laravel 的首頁
+* mysql DB
+    * 帳號 root
+    * 密碼 root
+    * PORT 3306
 
 ## 介紹
 * shell 檔案 : up.sh
