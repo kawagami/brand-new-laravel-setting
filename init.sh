@@ -36,6 +36,9 @@ NEW_DB_PATH=DATA_PATH_HOST="\.\.\/data"
 sed -e "s/$OLD_APP_PATH/$NEW_APP_PATH/" -i ./.env
 sed -e "s/$OLD_DB_PATH/$NEW_DB_PATH/" -i ./.env
 
+# 修改 laradock mysql 預設資料庫的設定
+sed -e "s/MYSQL_DATABASE=.*/MYSQL_DATABASE=laravel/" -i ./.env
+
 # 起 service
 docker-compose up -d nginx mysql
 
@@ -51,9 +54,6 @@ docker-compose down
 # 修改 laravel .env 的 DB_HOST
 sed -e "s/DB_HOST=.*/DB_HOST=mysql/" -i ../laravel/.env
 sed -e "s/DB_PASSWORD=.*/DB_PASSWORD=root/" -i ../laravel/.env
-
-# 修改 laradock mysql 資料庫的設定
-sed -e "s/MYSQL_DATABASE=.*/MYSQL_DATABASE=laravel/" -i ./.env
 
 # 修改根路徑
 AFTER_LARAVEL_INSTALL="APP_CODE_PATH_HOST=\.\.\/$APP_NAME"
