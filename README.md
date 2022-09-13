@@ -31,11 +31,11 @@ sh init.sh
 
 ## 介紹
 * shell 檔案 : up.sh
-    * 在專案目錄下使用 ==sh up.sh== 指令可啟動 laravel 專案預設之 service (nginx & mysql 相關)
+    * 在專案目錄下使用 **`sh up.sh`** 指令可啟動 laravel 專案預設之 service (nginx & mysql 相關)
 * shell 檔案 : down.sh
-    * 在專案目錄下使用 ==sh down.sh== 指令可關閉此專案使用之 service
+    * 在專案目錄下使用 **`sh down.sh`** 指令可關閉此專案使用之 service
 * shell 檔案 : cmd.sh
-    * 在專案目錄下使用 ==sh cmd.sh XXX==
+    * 在專案目錄下使用 **`sh cmd.sh XXX`**
         * 可快速使用各種 cmd 指令
         * ex : sh cmd.sh php artisan migrate
         * ex : sh cmd.sh composer install
